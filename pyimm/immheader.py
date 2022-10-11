@@ -80,7 +80,7 @@ imm_fieldnames = [
 def readHeader(fp, offset=0):
     fp.seek(offset)
     bindata = fp.read(1024)
-    if bindata == '':
+    if bindata == b'':
         return('eof')
 
     imm_headerdat = struct.unpack(imm_headformat,bindata)
